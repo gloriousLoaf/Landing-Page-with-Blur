@@ -17,22 +17,27 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     display: block;
-    filter: blur(10px);
-    -webkit-filter: blur(10px);
-    transition: all 750ms;
-}
-
-.showcase:hover::after {
     filter: blur(0px);
     -webkit-filter: blur(0px);
+    transition: all 1000ms;
 }
 
+/* Blurs road.jpg when hovering */ 
+.showcase:hover::after {
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    transition: all 1000ms;
+}
+
+/* Logo image is .content, not blurred while hovering */ 
 .showcase:hover .content {
-    filter: blur(2px);
-    -webkit-filter: blur(2px);
+    filter: blur(0px);
+    -webkit-filter: blur(0px);
+    transition: all 1000ms;
 }
 
-.content {
+/* Logo blurs after hover */ 
+.showcase .content {
     position: absolute;
     z-index: 1;
     top: 10%;
@@ -42,7 +47,9 @@ body {
     width: 300px;
     height: 350px;
     text-align: center;
-    transition: all 750ms;
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+    transition: all 1000ms;
 }
 
 .content .logo {
@@ -118,9 +125,11 @@ footer p {
         width: 140px;
     }
     
+    .fab {
+        margin-top: 30px;
+    }
 
-
-    .grid-3, .grid-2 {
+    .grid-2, .grid-3 {
         grid-template-columns: 1fr;
     }
 
@@ -135,4 +144,8 @@ footer p {
     .content .title, .text {
         display: none;
     }
+}
+
+.content {
+    top: 0;
 }

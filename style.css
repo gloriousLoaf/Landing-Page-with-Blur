@@ -115,14 +115,14 @@ footer p {
         height: 50vh;
     }
     
-    .content {
-        top: 5%;
-        margin-top: 5px;
-    }
-
     .content .logo {
         height: 140px;
         width: 140px;
+    }
+    
+    .content .logo, .title, .text {
+        position: relative;
+        bottom: 60px;
     }
     
     .fab {
